@@ -159,3 +159,43 @@ a173935297cd   python-docker   "python3 -m flask ru…"   5 minutes ago   Up 5 m
 Это удаляет неиспользуемые ресурсы, освобождая место и поддерживая чистоту вашей системы.
 
 И это все!
+
+
+## Заходм на виртуальный сервер(устанавливаем aws cli)
+22  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+   23  unzip awscliv2.zip
+   24  sudo apt install unzip
+   25  unzip awscliv2.zip
+   26  sudo ./aws/install
+   27  which aws
+   28  aws --version
+
+Если вы используете Debian или Ubuntu, вы можете установить Docker следующим образом:
+
+Удалите старые версии Docker, если они установлены:
+
+
+
+```sudo apt-get remove docker docker-engine docker.io containerd runc```
+
+Обновите список пакетов и установите необходимые зависимости:
+```
+sudo apt-get update
+sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
+```
+Добавьте ключ GPG Docker в систему:
+```
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+```
+Добавьте репозиторий Docker в список источников пакетов:
+```
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+Обновите список пакетов и установите Docker:
+```
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+```
+После выполнения этих команд Docker должен быть успешно установлен на вашей системе.
+```
+docker pull 065103934905.dkr.ecr.eu-central-1.amazonaws.com/app:v2```

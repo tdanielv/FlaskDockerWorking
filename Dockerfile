@@ -1,5 +1,5 @@
 # Официальный образ Python
-FROM python:3.8-slim-buster
+FROM python:3.8
 
 # Установка зависимостей
 COPY requirements.txt .
